@@ -6,6 +6,6 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @ComponentScan(basePackages = {"org.example.service", "org.example.repository"})
-@Import(DatabaseConfig.class)
+@Import({DatabaseConfig.class , PasswordConfig.class})
 public class RootConfig {
 }
