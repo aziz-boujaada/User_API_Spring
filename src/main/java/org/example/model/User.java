@@ -20,21 +20,25 @@ public class User {
     private String password ;
 
 
+    @Column(nullable = false)
+    private String phone ;
+
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
     @Column(nullable = false)
     private boolean active;
 
-    public User(Long id, String name, String password, String email, UserRole role, boolean active) {
+    public User(Long id, String name, String password, String email,String phone, UserRole role, boolean active) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.email = email;
+        this.phone = phone;
         this.role = role;
         this.active = active;
     }
-    protected User() {
+    public User() {
         
     }
 
@@ -84,5 +88,13 @@ public class User {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
